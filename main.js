@@ -22,6 +22,7 @@ app.post('/webhook', line.middleware(lineAccount), function (req, res) {
 
 let lineEvent = function (event) {
     return new Promise(function (resolve, reject) {
+        console.log('event')
         if (event.type === 'message') {
             if (event.message.type === 'text') {
                 let text = event.message.text
@@ -44,6 +45,7 @@ let lineEvent = function (event) {
 }
 
 let reply = function (event, text) {
+    console.log(event)
     return new Promise(function (resolve, reject) {
         client.replyMessage(event.replyToken, {type: 'text', text: text})
             .then(function () {
