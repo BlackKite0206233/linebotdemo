@@ -1,6 +1,6 @@
 {
     "name": "linebotdemo",
-    "script": {
+    "scripts": {
         "start": "node main.js"
     },
     "dependencies": {
